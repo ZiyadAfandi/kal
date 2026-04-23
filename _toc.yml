@@ -1,0 +1,8 @@
+format: jb-book
+root: _sources/intro
+chapters:
+- file: _sources/tugas1.ipynb
+- file: _sources/markdown.md
+- file: _sources/markdown-notebooks.md
+- file: _sources/notebooks.ipynb
+  title: persamaan liner

@@ -1,0 +1,18 @@
+# Book settings
+title: Aljabar Linier & Komputasi
+author: Tim KAL
+logo: logo.png
+
+# HTML settings
+html:
+  favicon: logo.png
+  use_edit_page_button: false
+  use_repository_button: false
+  use_issues_button: false
+  home_page_in_navbar: true
+  extra_navbar: Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+
+# Execution settings
+execute:
+  execute_notebooks: force
+  allow_errors: false

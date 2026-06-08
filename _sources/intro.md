@@ -1,6 +1,6 @@
-# Selamat Datang di Buku Interaktif KAL 📖
+# Selamat Datang di Materi Komputasi Aljabar Linier
 
-Buku ini dibuat menggunakan **Jupyter Book** untuk menyajikan materi pembelajaran aljabar linier dan komputasi secara dinamis, interaktif, dan modern. Di sini Anda akan menemukan penjelasan konsep, kode Python, serta visualisasi grafis yang interaktif.
+saya Moh Ziyad Afandi dari prodi Teknik Informatika, tujuan website ini untuk menyimpan seluruh materi Komputasi Aljabar Linier
 
 ## Daftar Isi
 - [Contoh Penulisan Markdown](markdown.md) - Pelajari cara menulis artikel/catatan dengan format Markdown yang indah.

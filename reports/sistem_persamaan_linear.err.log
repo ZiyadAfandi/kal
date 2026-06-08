@@ -28,13 +28,28 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-Nilai x = 2.0
+import sympy as sp
+
+# Definisi variabel
+x, y = sp.symbols('x y')
+
+# Definisi persamaan
+persamaan1 = x + y - 6
+persamaan2 = 2*x - y - 4
+
+# Menyelesaikan sistem
+solusi = sp.solve((persamaan1, persamaan2), (x, y))
+
+print("Solusi:", solusi)
 ------------------
 
 
-  [36mCell[39m[36m [39m[32mIn[2][39m[32m, line 1[39m
-[31m    [39m[31mNilai x = 2.0[39m
-          ^
-[31mSyntaxError[39m[31m:[39m invalid syntax
+[31m---------------------------------------------------------------------------[39m
+[31mModuleNotFoundError[39m                       Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[6][39m[32m, line 1[39m
+[32m----> [39m[32m1[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01msympy[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01msp[39;00m
+[32m      3[39m [38;5;66;03m# Definisi variabel[39;00m
+[32m      4[39m x, y = sp.symbols([33m'[39m[33mx y[39m[33m'[39m)
 
+[31mModuleNotFoundError[39m: No module named 'sympy'
 

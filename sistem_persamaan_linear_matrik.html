@@ -66,6 +66,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'sistem_persamaan_linear_matrik';</script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
@@ -85,6 +87,7 @@
     <link rel="icon" href="_static/logo.jpeg"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="MENCARI A invers matrix" href="mencari_A_invers_matrik.html" />
     <link rel="prev" title="SISTEM PERSAMAAN LINEAR" href="sistem_persamaan_linear.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -229,6 +232,7 @@
 
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">SISTEM PERSAMAAN LINEAR MATRIK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mencari_A_invers_matrik.html">MENCARI A invers matrix</a></li>
 </ul>
 
     </div>
@@ -354,7 +358,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -370,6 +376,40 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-gaussian">📘 Eliminasi Gaussian</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesaian-sistem-persamaan-linier-3-dan-4-variabel">Penyelesaian Sistem Persamaan Linier 3 dan 4 Variabel</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-sistem-persamaan-linier-tiga-variabel">A. Sistem Persamaan Linier Tiga Variabel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistem-persamaan">1. Sistem Persamaan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-augmented">2. Matriks Augmented</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-gauss">3. Eliminasi Gauss</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1">Langkah 1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2">Langkah 2</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#substitusi-balik">4. Substitusi Balik</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-sistem-persamaan-linier-empat-variabel">B. Sistem Persamaan Linier Empat Variabel</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1. Sistem Persamaan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2. Matriks Augmented</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3. Eliminasi Gauss</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Langkah 1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Langkah 2</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3">Langkah 3</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">4. Substitusi Balik</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -387,6 +427,106 @@ document.write(`
 <p>Mata Kuliah : KOMPUTASI ALJABAR LINIER</p>
 <hr class="docutils" />
 <p>membuat contoh penyelesaian sistem persamaan linier tiga variabel dan empat variabel dengan menggunakan eliminasi gaussian, cara mencarinya atau prosesnya bisa menggunakan tools bapak tadi nanti baru ke jupyter notebook</p>
+<section id="eliminasi-gaussian">
+<h2>📘 Eliminasi Gaussian<a class="headerlink" href="#eliminasi-gaussian" title="Link to this heading">#</a></h2>
+<section id="penyelesaian-sistem-persamaan-linier-3-dan-4-variabel">
+<h3>Penyelesaian Sistem Persamaan Linier 3 dan 4 Variabel<a class="headerlink" href="#penyelesaian-sistem-persamaan-linier-3-dan-4-variabel" title="Link to this heading">#</a></h3>
+<p>(Menggunakan operasi baris elementer add_multiple_of_row)</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="a-sistem-persamaan-linier-tiga-variabel">
+<h2>A. Sistem Persamaan Linier Tiga Variabel<a class="headerlink" href="#a-sistem-persamaan-linier-tiga-variabel" title="Link to this heading">#</a></h2>
+</section>
+<section id="sistem-persamaan">
+<h2>1. Sistem Persamaan<a class="headerlink" href="#sistem-persamaan" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases} 
+x + y + z = 6 \\ 
+2x + y - z = 3 \\ 
+x - y + 2z = 7 
+\end{cases}\end{split}\]</div>
+</section>
+<section id="matriks-augmented">
+<h2>2. Matriks Augmented<a class="headerlink" href="#matriks-augmented" title="Link to this heading">#</a></h2>
+<p><img alt="Grafik SPL" src="_images/gambar1.png" /></p>
+<section id="eliminasi-gauss">
+<h3>3. Eliminasi Gauss<a class="headerlink" href="#eliminasi-gauss" title="Link to this heading">#</a></h3>
+<section id="langkah-1">
+<h4>Langkah 1<a class="headerlink" href="#langkah-1" title="Link to this heading">#</a></h4>
+<p>Menghilangkan elemen di bawah pivot pertama (kolom pertama):</p>
+<p><img alt="Grafik SPL" src="_images/gambar2.png" /></p>
+<p>Hasil:$<span class="math notranslate nohighlight">\(\left[
+\begin{array}{ccc|c}
+1 &amp; 1 &amp; 1 &amp; 6 \\
+0 &amp; -1 &amp; -3 &amp; -9 \\
+0 &amp; -2 &amp; 1 &amp; 1
+\end{array}
+\right]\)</span>$</p>
+</section>
+<section id="langkah-2">
+<h4>Langkah 2<a class="headerlink" href="#langkah-2" title="Link to this heading">#</a></h4>
+<p>Menghilangkan elemen di bawah pivot kedua:</p>
+<p><img alt="Grafik SPL" src="_images/gambar3.png" /></p>
+<p>Hasil: <span class="math notranslate nohighlight">\(\begin{bmatrix} 1 &amp; 1 &amp; 1 &amp; 6 \\ 0 &amp; -1 &amp; -3 &amp; -9 \\ 0 &amp; 0 &amp; 7 &amp; 19 \end{bmatrix}\)</span></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="substitusi-balik">
+<h3>4. Substitusi Balik<a class="headerlink" href="#substitusi-balik" title="Link to this heading">#</a></h3>
+<p>Dari matriks segitiga atas diperoleh:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix} x \\ y \\ z \end{bmatrix} = \begin{bmatrix} \frac{17}{7} \\ \frac{6}{7} \\ \frac{19}{7} \end{bmatrix}\end{split}\]</div>
+</section>
+</section>
+<section id="b-sistem-persamaan-linier-empat-variabel">
+<h2>B. Sistem Persamaan Linier Empat Variabel<a class="headerlink" href="#b-sistem-persamaan-linier-empat-variabel" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3>1. Sistem Persamaan<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases} 
+x + y + z + w = 10 \\ 
+2x + y + z + w = 13 \\ 
+x + 2y + z + w = 14 \\ 
+x + y + 2z + w = 15 
+\end{cases}\end{split}\]</div>
+</section>
+<section id="id2">
+<h3>2. Matriks Augmented<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p><img alt="Grafik SPL" src="_images/gambar4.png" /></p>
+</section>
+<section id="id3">
+<h3>3. Eliminasi Gauss<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<section id="id4">
+<h4>Langkah 1<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<p>Menghilangkan elemen pada kolom pertama:</p>
+<p><img alt="Grafik SPL" src="_images/gambar5.png" /></p>
+<p>Hasil: <span class="math notranslate nohighlight">\(\begin{bmatrix} 1 &amp; 1 &amp; 1 &amp; 1 &amp; 10 \\ 0 &amp; -1 &amp; -1 &amp; -1 &amp; -7 \\ 0 &amp; 1 &amp; 0 &amp; 0 &amp; 4 \\ 0 &amp; 0 &amp; 1 &amp; 0 &amp; 5 \end{bmatrix}\)</span></p>
+</section>
+<section id="id5">
+<h4>Langkah 2<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
+<p>Menghilangkan elemen pada kolom kedua:</p>
+<p><img alt="Grafik SPL" src="_images/grafik1.png" /></p>
+<p>Hasil: <span class="math notranslate nohighlight">\(\begin{bmatrix} 1 &amp; 1 &amp; 1 &amp; 1 &amp; 10 \\ 0 &amp; -1 &amp; -1 &amp; -1 &amp; -7 \\ 0 &amp; 0 &amp; -1 &amp; -1 &amp; -3 \\ 0 &amp; 0 &amp; 1 &amp; 0 &amp; 5 \end{bmatrix}\)</span></p>
+</section>
+<section id="langkah-3">
+<h4>Langkah 3<a class="headerlink" href="#langkah-3" title="Link to this heading">#</a></h4>
+<p>Menghilangkan elemen pada kolom ketiga:</p>
+<p><img alt="Grafik SPL" src="_images/gambar7.png" /></p>
+<p>Hasil: <span class="math notranslate nohighlight">\(\begin{bmatrix} 1 &amp; 1 &amp; 1 &amp; 1 &amp; 10 \\ 0 &amp; -1 &amp; -1 &amp; -1 &amp; -7 \\ 0 &amp; 0 &amp; -1 &amp; -1 &amp; -3 \\ 0 &amp; 0 &amp; 0 &amp; -1 &amp; 2 \end{bmatrix}\)</span></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id6">
+<h3>4. Substitusi Balik<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>(<span class="math notranslate nohighlight">\(w = -2\)</span>)</p></li>
+<li><p>(<span class="math notranslate nohighlight">\(z = 5\)</span>)</p></li>
+<li><p>(<span class="math notranslate nohighlight">\(y = 4\)</span>)</p></li>
+<li><p>(<span class="math notranslate nohighlight">\(x = 3\)</span>)</p></li>
+</ul>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -428,12 +568,62 @@ document.write(`
         <p class="prev-next-title">SISTEM PERSAMAAN LINEAR</p>
       </div>
     </a>
+    <a class="right-next"
+       href="mencari_A_invers_matrik.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">MENCARI A invers matrix</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-gaussian">📘 Eliminasi Gaussian</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesaian-sistem-persamaan-linier-3-dan-4-variabel">Penyelesaian Sistem Persamaan Linier 3 dan 4 Variabel</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-sistem-persamaan-linier-tiga-variabel">A. Sistem Persamaan Linier Tiga Variabel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistem-persamaan">1. Sistem Persamaan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-augmented">2. Matriks Augmented</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-gauss">3. Eliminasi Gauss</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1">Langkah 1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2">Langkah 2</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#substitusi-balik">4. Substitusi Balik</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-sistem-persamaan-linier-empat-variabel">B. Sistem Persamaan Linier Empat Variabel</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1. Sistem Persamaan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2. Matriks Augmented</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3. Eliminasi Gauss</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Langkah 1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Langkah 2</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3">Langkah 3</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">4. Substitusi Balik</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

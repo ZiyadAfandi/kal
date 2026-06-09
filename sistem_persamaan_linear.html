@@ -87,6 +87,7 @@
     <link rel="icon" href="_static/logo.jpeg"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="SISTEM PERSAMAAN LINEAR MATRIK" href="sistem_persamaan_linear_matrik.html" />
     <link rel="prev" title="Contoh Notebook Interaktif 📈" href="notebook.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -224,6 +225,15 @@
 
 
 
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="sistem_persamaan_linear_matrik.html">SISTEM PERSAMAAN LINEAR MATRIK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mencari_A_invers_matrik.html">MENCARI A invers matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Hitunglah_determinan_matrik_berikut_dengan_menggunakan_rumus_expansi_baris.html">A. Hitunglah determinan matrik berikut dengan menggunakan rumus expansi baris</a></li>
 
 
 
@@ -567,22 +577,12 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai x = 2.0
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># b). Persamaan: 7y - 3 = 11</span>
 <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">11</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">/</span> <span class="mi">7</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nilai y =&quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai y = 2.0
 </pre></div>
 </div>
 </div>
@@ -606,11 +606,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x = 4 , y = 6
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -618,11 +613,6 @@ document.write(`
 <span class="n">x</span> <span class="o">=</span> <span class="mi">4</span>
 <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">5</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x =&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;, y =&quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x = 4 , y = 1.0
 </pre></div>
 </div>
 </div>
@@ -649,12 +639,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x = 3.3333333333333335
-y = 2.6666666666666665
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -671,18 +655,6 @@ y = 2.6666666666666665
 <span class="n">solusi</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">((</span><span class="n">persamaan1</span><span class="p">,</span> <span class="n">persamaan2</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Solusi:&quot;</span><span class="p">,</span> <span class="n">solusi</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Definisi variabel</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x y&#39;</span><span class="p">)</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;sympy&#39;
 </pre></div>
 </div>
 </div>
@@ -1448,6 +1420,15 @@ x_1 - x_2 + x_3 = 3 \\
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Contoh Notebook Interaktif 📈</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="sistem_persamaan_linear_matrik.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">SISTEM PERSAMAAN LINEAR MATRIK</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>

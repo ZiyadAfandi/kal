@@ -6,7 +6,9 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Search - Aljabar Linier & Komputasi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Determinan Matriks Ordo 2x2 &#8212; Aljabar Linier &amp; Komputasi</title>
   
   
   
@@ -64,7 +66,9 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'search';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'determinan';</script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
     <script src="_static/copybutton_funcs.js?v=776a791e"></script>
@@ -80,12 +84,9 @@
     <script src="_static/scripts/fontawesome.js?v=9b125980"></script>
     <script src="_static/scripts/pydata-sphinx-theme.js?v=a1eb5d9f"></script>
     <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
-  <script src="_static/searchtools.js"></script>
-  <script src="_static/language_data.js"></script>
-  <script src="searchindex.js"></script>
     <link rel="icon" href="_static/logo.jpeg"/>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="#" />
+    <link rel="search" title="Search" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -117,7 +118,7 @@
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
-      action="#"
+      action="search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
@@ -293,6 +294,54 @@
 
 
 
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/determinan.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
   title="Fullscreen mode"
@@ -326,7 +375,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -335,42 +386,153 @@ document.write(`
 </div>
               
               
-  <div class="bd-search-container">
-    <h1>Search</h1>
-    <noscript>
-      <div class="admonition error">
-        <p class="admonition-title">Error</p>
-        <p>Please activate JavaScript to enable the search functionality.</p>
-      </div>
-    </noscript>
-    
-<form class="bd-search d-flex align-items-center"
-      action="#"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-    <div id="search-results"></div>
-  </div>
-  <script>
-    // Activate the search field on page load
-    let searchInput = document.querySelector("form.bd-search input");
-    if (searchInput) {
-        searchInput.focus();
-        searchInput.select();
-        console.log("[PST]: Set focus on search field.");
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Determinan Matriks Ordo 2x2</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian-determinan-matriks">1. Pengertian Determinan Matriks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-determinan-matriks-ordo-2x2">2. Rumus Determinan Matriks Ordo 2x2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus">Rumus:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-soal-dan-penyelesaian">3. Contoh Soal dan Penyelesaian</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-1-bilangan-positif">Contoh 1 (Bilangan Positif)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-2-melibatkan-bilangan-negatif">Contoh 2 (Melibatkan Bilangan Negatif)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jenis-matriks-berdasarkan-nilai-determinan">4. Jenis Matriks Berdasarkan Nilai Determinan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-determinan-matriks">5. Sifat-Sifat Determinan Matriks</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="determinan-matriks-ordo-2x2">
+<h1>Determinan Matriks Ordo 2x2<a class="headerlink" href="#determinan-matriks-ordo-2x2" title="Link to this heading">#</a></h1>
+<section id="pengertian-determinan-matriks">
+<h2>1. Pengertian Determinan Matriks<a class="headerlink" href="#pengertian-determinan-matriks" title="Link to this heading">#</a></h2>
+<p>Determinan adalah sebuah nilai skalar (angka real) yang dihasilkan dari elemen-elemen suatu matriks persegi. Determinan dari matriks <span class="math notranslate nohighlight">\(A\)</span> biasanya dinotasikan dengan lambang <strong><span class="math notranslate nohighlight">\(\det(A)\)</span></strong> atau <strong><span class="math notranslate nohighlight">\(|A|\)</span></strong>.</p>
+<p><em>Catatan: Hanya matriks persegi (jumlah baris dan kolom sama) yang memiliki nilai determinan.</em></p>
+</section>
+<hr class="docutils" />
+<section id="rumus-determinan-matriks-ordo-2x2">
+<h2>2. Rumus Determinan Matriks Ordo 2x2<a class="headerlink" href="#rumus-determinan-matriks-ordo-2x2" title="Link to this heading">#</a></h2>
+<p>Matriks ordo <span class="math notranslate nohighlight">\(2 \times 2\)</span> terdiri dari 2 baris dan 2 kolom (total 4 elemen).</p>
+<p>Jika kita memiliki matriks <span class="math notranslate nohighlight">\(A\)</span> sebagai berikut:
+$<span class="math notranslate nohighlight">\(A = \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}\)</span>$</p>
+<p>Maka, determinan dari matriks <span class="math notranslate nohighlight">\(A\)</span> dihitung dengan cara <strong>mengurangi hasil kali elemen-elemen diagonal utama dengan hasil kali elemen-elemen diagonal sekunder</strong>.</p>
+<section id="rumus">
+<h3>Rumus:<a class="headerlink" href="#rumus" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\det(A) = |A| = (a \cdot d) - (b \cdot c)\]</div>
+<p><strong>Keterangan:</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a\)</span> dan <span class="math notranslate nohighlight">\(d\)</span> adalah elemen <strong>diagonal utama</strong> (dari kiri atas ke kanan bawah).</p></li>
+<li><p><span class="math notranslate nohighlight">\(b\)</span> oars <span class="math notranslate nohighlight">\(c\)</span> adalah elemen <strong>diagonal sekunder</strong> (dari kanan atas ke kiri bawah).</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="contoh-soal-dan-penyelesaian">
+<h2>3. Contoh Soal dan Penyelesaian<a class="headerlink" href="#contoh-soal-dan-penyelesaian" title="Link to this heading">#</a></h2>
+<section id="contoh-1-bilangan-positif">
+<h3>Contoh 1 (Bilangan Positif)<a class="headerlink" href="#contoh-1-bilangan-positif" title="Link to this heading">#</a></h3>
+<p>Diketahui matriks <span class="math notranslate nohighlight">\(B = \begin{pmatrix} 5 &amp; 3 \\ 2 &amp; 4 \end{pmatrix}\)</span>. Tentukan determinan matriks <span class="math notranslate nohighlight">\(B\)</span>!</p>
+<p><strong>Penyelesaian:</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a = 5, b = 3, c = 2, d = 4\)</span>
+$<span class="math notranslate nohighlight">\(\det(B) = (5 \cdot 4) - (3 \cdot 2)\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(\det(B) = 20 - 6\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(\det(B) = 14\)</span><span class="math notranslate nohighlight">\(
+Jadi, nilai determinan matriks \)</span>B$ adalah <strong>14</strong>.</p></li>
+</ul>
+</section>
+<section id="contoh-2-melibatkan-bilangan-negatif">
+<h3>Contoh 2 (Melibatkan Bilangan Negatif)<a class="headerlink" href="#contoh-2-melibatkan-bilangan-negatif" title="Link to this heading">#</a></h3>
+<p>Diketahui matriks <span class="math notranslate nohighlight">\(C = \begin{pmatrix} 3 &amp; -1 \\ 4 &amp; 2 \end{pmatrix}\)</span>. Tentukan <span class="math notranslate nohighlight">\(\det(C)\)</span>!</p>
+<p><strong>Penyelesaian:</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a = 3, b = -1, c = 4, d = 2\)</span>
+$<span class="math notranslate nohighlight">\(\det(C) = (3 \cdot 2) - (-1 \cdot 4)\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(\det(C) = 6 - (-4)\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(\det(C) = 6 + 4\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(\det(C) = 10\)</span><span class="math notranslate nohighlight">\(
+Jadi, nilai determinan matriks \)</span>C$ adalah <strong>10</strong>.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="jenis-matriks-berdasarkan-nilai-determinan">
+<h2>4. Jenis Matriks Berdasarkan Nilai Determinan<a class="headerlink" href="#jenis-matriks-berdasarkan-nilai-determinan" title="Link to this heading">#</a></h2>
+<p>Berdasarkan nilai determinannya, matriks persegi dibagi menjadi dua jenis:</p>
+<ol class="arabic simple">
+<li><p><strong>Matriks Singular</strong></p>
+<ul class="simple">
+<li><p>Adalah matriks yang nilai determinannya <strong>sama dengan nol</strong> (<span class="math notranslate nohighlight">\(\det(A) = 0\)</span>).</p></li>
+<li><p>Matriks singular <strong>tidak memiliki invers</strong> (kebalikan).</p></li>
+<li><p><em>Contoh:</em> <span class="math notranslate nohighlight">\(M = \begin{pmatrix} 6 &amp; 3 \\ 4 &amp; 2 \end{pmatrix} \rightarrow \det(M) = (6\cdot2) - (3\cdot4) = 12 - 12 = 0\)</span>.</p></li>
+</ul>
+</li>
+<li><p><strong>Matriks Non-Singular</strong></p>
+<ul class="simple">
+<li><p>Adalah matriks yang nilai determinannya <strong>tidak sama dengan nol</strong> (<span class="math notranslate nohighlight">\(\det(A) \neq 0\)</span>).</p></li>
+<li><p>Matriks non-singular <strong>memiliki invers</strong>.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="sifat-sifat-determinan-matriks">
+<h2>5. Sifat-Sifat Determinan Matriks<a class="headerlink" href="#sifat-sifat-determinan-matriks" title="Link to this heading">#</a></h2>
+<p>Berikut adalah beberapa sifat penting determinan yang sering digunakan untuk mempermudah perhitungan:</p>
+<ol class="arabic simple">
+<li><p><strong>Sifat Transpose:</strong> <span class="math notranslate nohighlight">\(\det(A^T) = \det(A)\)</span>
+<em>(Nilai determinan tidak berubah meskipun baris dan kolomnya ditukar).</em></p></li>
+<li><p><strong>Sifat Perkalian Matriks:</strong> <span class="math notranslate nohighlight">\(\det(A \cdot B) = \det(A) \cdot \det(B)\)</span></p></li>
+<li><p><strong>Sifat Invers:</strong> <span class="math notranslate nohighlight">\(\det(A^{-1}) = \frac{1}{\det(A)}\)</span></p></li>
+<li><p><strong>Sifat Perkalian Skalar:</strong> <span class="math notranslate nohighlight">\(\det(k \cdot A) = k^2 \cdot \det(A)\)</span> <em>(khusus untuk ordo <span class="math notranslate nohighlight">\(2 \times 2\)</span>, di mana <span class="math notranslate nohighlight">\(k\)</span> adalah konstanta/skalar).</em></p></li>
+</ol>
+<hr class="docutils" />
+<p><em>Tips Belajar: Berhati-hatilah dengan tanda negatif <span class="math notranslate nohighlight">\((-)\)</span> saat mengalikan elemen diagonal sekunder. Kesalahan umum yang sering terjadi adalah lupa mengubah tanda minus bertemu minus menjadi plus (<span class="math notranslate nohighlight">\(-\cdot- = +\)</span>).</em></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
     }
-  </script>
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
 
               
               
@@ -385,6 +547,32 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian-determinan-matriks">1. Pengertian Determinan Matriks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-determinan-matriks-ordo-2x2">2. Rumus Determinan Matriks Ordo 2x2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus">Rumus:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-soal-dan-penyelesaian">3. Contoh Soal dan Penyelesaian</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-1-bilangan-positif">Contoh 1 (Bilangan Positif)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-2-melibatkan-bilangan-negatif">Contoh 2 (Melibatkan Bilangan Negatif)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jenis-matriks-berdasarkan-nilai-determinan">4. Jenis Matriks Berdasarkan Nilai Determinan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-determinan-matriks">5. Sifat-Sifat Determinan Matriks</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

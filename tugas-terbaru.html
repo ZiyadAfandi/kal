@@ -1,0 +1,1368 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>A. Soal Determinan Matriks 3×3 &#8212; Aljabar Linier &amp; Komputasi</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=720ed60b" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=fb9458d3" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=720ed60b" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/theme.css?v=a243ae73" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tugas-terbaru';</script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/copybutton_funcs.js?v=776a791e"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/language_data.js?v=d4673a71"></script>
+    <script src="_static/searchtools.js?v=63a53a7d"></script>
+    <script src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/togglebutton.js?v=1ae7504c"></script>
+    <script src="_static/scripts/bootstrap.js?v=7583a70d"></script>
+    <script src="_static/scripts/fontawesome.js?v=9b125980"></script>
+    <script src="_static/scripts/pydata-sphinx-theme.js?v=a1eb5d9f"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <link rel="icon" href="_static/logo.jpeg"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Determinan Matriks Ordo 2x2" href="determinan.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.jpeg" class="logo__image only-light" alt="Aljabar Linier & Komputasi - Home"/>
+    <script>document.write(`<img src="_static/logo.jpeg" class="logo__image only-dark" alt="Aljabar Linier & Komputasi - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Selamat Datang di Materi Komputasi Aljabar Linier
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Menulis dengan Markdown ✨</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebook.html">Contoh Notebook Interaktif 📈</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sistem_persamaan_linear.html">SISTEM PERSAMAAN LINEAR</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="sistem_persamaan_linear_matrik.html">SISTEM PERSAMAAN LINEAR MATRIK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mencari_A_invers_matrik.html">MENCARI A invers matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Hitunglah_determinan_matrik_berikut_dengan_menggunakan_rumus_expansi_baris.html">A. Hitunglah determinan matrik berikut dengan menggunakan rumus expansi baris</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="tugas.html">A. Perhitungan Determinan (Ekspansi Baris)</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="matriks.html">Matriks (Penjumlahan, Pengurangan, dan Perkalian)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="determinan.html">Determinan Matriks Ordo 2x2</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">A. Soal Determinan Matriks 3×3</a></li>
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/tugas-terbaru.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>A. Soal Determinan Matriks 3×3</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">A. Soal Determinan Matriks 3×3</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-1">Soal 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-penyelesaian-metode-sarrus">Langkah Penyelesaian (Metode Sarrus)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jumlahkan-hasil-kali-diagonal-utama">1. Jumlahkan Hasil Kali Diagonal Utama (\)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jumlahkan-hasil-kali-diagonal-sekunder">2. Jumlahkan Hasil Kali Diagonal Sekunder (/)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-determinan">3. Hitung Determinan</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-2">Soal 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Langkah Penyelesaian (Metode Sarrus)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jumlahkan-hasil-kali-diagonal-utama-dari-kiri-atas-ke-kanan-bawah">1. Jumlahkan Hasil Kali Diagonal Utama (dari kiri atas ke kanan bawah)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jumlahkan-hasil-kali-diagonal-sekunder-dari-kiri-bawah-ke-kanan-atas">2. Jumlahkan Hasil Kali Diagonal Sekunder (dari kiri bawah ke kanan atas)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-nilai-determinan-matriks-b">3. Hitung Nilai Determinan Matriks B</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-3">Soal 3</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-penyelesaian">Langkah Penyelesaian</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-nilai-det-c-menggunakan-metode-sarrus">1. Menghitung Nilai <span class="math notranslate nohighlight">\(\det(C)\)</span> menggunakan Metode Sarrus</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-apakah-matriks-termasuk-singular-atau-tidak">2. Penjelasan Apakah Matriks Termasuk Singular atau Tidak</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#b-soal-dekomposisi-matriks-lu-decomposition">B. Soal Dekomposisi Matriks (LU Decomposition)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-4">Soal 4</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-penyelesaian-dekomposisi-lu">Langkah Penyelesaian (Dekomposisi LU)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-mengeliminasi-baris-2-dan-baris-3-pada-kolom-1">Langkah 1: Mengeliminasi Baris 2 dan Baris 3 pada Kolom 1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-mengeliminasi-baris-3-pada-kolom-2">Langkah 2: Mengeliminasi Baris 3 pada Kolom 2</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-menyusun-matriks-l">Langkah 3: Menyusun Matriks <span class="math notranslate nohighlight">\(L\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pembuktian-a-lu">Pembuktian (<span class="math notranslate nohighlight">\(A = LU\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-5">Soal 5</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-penyelesaian-dekomposisi-lu-via-eliminasi-gauss">Langkah Penyelesaian (Dekomposisi LU via Eliminasi Gauss)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-eliminasi-kolom-1-membuat-nol-elemen-di-bawah-b-11">Langkah 1: Eliminasi Kolom 1 (Membuat nol elemen di bawah <span class="math notranslate nohighlight">\(b_{11}\)</span>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-eliminasi-kolom-2-membuat-nol-elemen-di-bawah-posisi-2-2">Langkah 2: Eliminasi Kolom 2 (Membuat nol elemen di bawah posisi <span class="math notranslate nohighlight">\((2,2)\)</span>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Langkah 3: Menyusun Matriks <span class="math notranslate nohighlight">\(L\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pembuktian-b-lu">Pembuktian (<span class="math notranslate nohighlight">\(B = LU\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Kesimpulan</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-6">Soal 6</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Langkah Penyelesaian (Dekomposisi LU)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-eliminasi-kolom-1-membuat-nol-elemen-di-bawah-c-11">Langkah 1: Eliminasi Kolom 1 (Membuat nol elemen di bawah <span class="math notranslate nohighlight">\(c_{11}\)</span>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Langkah 2: Eliminasi Kolom 2 (Membuat nol elemen di bawah posisi <span class="math notranslate nohighlight">\((2,2)\)</span>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Langkah 3: Menyusun Matriks <span class="math notranslate nohighlight">\(L\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pembuktian-c-lu">Pembuktian (<span class="math notranslate nohighlight">\(C = LU\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Kesimpulan</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#c-soal-invers-matriks-33">C. Soal Invers Matriks 3×3</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-7">Soal 7</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-penyelesaian-mencari-invers-dengan-metode-adjoin">Langkah Penyelesaian (Mencari Invers dengan Metode Adjoin)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-menghitung-determinan-matriks-a-det-a">Langkah 1: Menghitung Determinan Matriks <span class="math notranslate nohighlight">\(A\)</span> (<span class="math notranslate nohighlight">\(\det(A)\)</span>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-menghitung-matriks-kofaktor">Langkah 2: Menghitung Matriks Kofaktor</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-menentukan-matriks-adjoin-text-adj-a">Langkah 3: Menentukan Matriks Adjoin (<span class="math notranslate nohighlight">\(\text{Adj}(A)\)</span>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-menghitung-invers-matriks-a-a-1">Langkah 4: Menghitung Invers Matriks <span class="math notranslate nohighlight">\(A\)</span> (<span class="math notranslate nohighlight">\(A^{-1}\)</span>)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pembuktian-a-times-a-1-i">Pembuktian (<span class="math notranslate nohighlight">\(A \times A^{-1} = I\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Kesimpulan</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-8">Soal 8</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Langkah Penyelesaian (Mencari Invers dengan Metode Adjoin)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-menghitung-determinan-matriks-b-det-b">Langkah 1: Menghitung Determinan Matriks <span class="math notranslate nohighlight">\(B\)</span> (<span class="math notranslate nohighlight">\(\det(B)\)</span>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Langkah 2: Menghitung Matriks Kofaktor</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-menentukan-matriks-adjoin-text-adj-b">Langkah 3: Menentukan Matriks Adjoin (<span class="math notranslate nohighlight">\(\text{Adj}(B)\)</span>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-menghitung-invers-matriks-b-b-1">Langkah 4: Menghitung Invers Matriks <span class="math notranslate nohighlight">\(B\)</span> (<span class="math notranslate nohighlight">\(B^{-1}\)</span>)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Kesimpulan</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-9">Soal 9</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Langkah Penyelesaian (Mencari Invers dengan Metode Adjoin)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-menghitung-determinan-matriks-c-det-c">Langkah 1: Menghitung Determinan Matriks <span class="math notranslate nohighlight">\(C\)</span> (<span class="math notranslate nohighlight">\(\det(C)\)</span>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Langkah 2: Menghitung Matriks Kofaktor</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-menentukan-matriks-adjoin-text-adj-c">Langkah 3: Menentukan Matriks Adjoin (<span class="math notranslate nohighlight">\(\text{Adj}(C)\)</span>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-menghitung-invers-matriks-c-c-1">Langkah 4: Menghitung Invers Matriks <span class="math notranslate nohighlight">\(C\)</span> (<span class="math notranslate nohighlight">\(C^{-1}\)</span>)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Kesimpulan</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="a-soal-determinan-matriks-33">
+<h1>A. Soal Determinan Matriks 3×3<a class="headerlink" href="#a-soal-determinan-matriks-33" title="Link to this heading">#</a></h1>
+<section id="soal-1">
+<h2>Soal 1<a class="headerlink" href="#soal-1" title="Link to this heading">#</a></h2>
+<section id="langkah-penyelesaian-metode-sarrus">
+<h3>Langkah Penyelesaian (Metode Sarrus)<a class="headerlink" href="#langkah-penyelesaian-metode-sarrus" title="Link to this heading">#</a></h3>
+<p>Untuk menghitung determinan matriks <span class="math notranslate nohighlight">\(3\times3\)</span>, kita dapat menggunakan <strong>Metode Sarrus</strong>. Caranya adalah dengan menuliskan kembali dua kolom pertama di sebelah kanan matriks asli:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{matrix}
+2 &amp; 1 &amp; 3 &amp; | &amp; 2 &amp; 1 \\
+0 &amp; 4 &amp; 5 &amp; | &amp; 0 &amp; 4 \\
+1 &amp; 2 &amp; 1 &amp; | &amp; 1 &amp; 2
+\end{matrix}\end{split}\]</div>
+<section id="jumlahkan-hasil-kali-diagonal-utama">
+<h4>1. Jumlahkan Hasil Kali Diagonal Utama (\)<a class="headerlink" href="#jumlahkan-hasil-kali-diagonal-utama" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Diagonal 1: <span class="math notranslate nohighlight">\(2 \times 4 \times 1 = 8\)</span></p></li>
+<li><p>Diagonal 2: <span class="math notranslate nohighlight">\(1 \times 5 \times 1 = 5\)</span></p></li>
+<li><p>Diagonal 3: <span class="math notranslate nohighlight">\(3 \times 0 \times 2 = 0\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\text{Total Diagonal Utama} = 8 + 5 + 0 = 13\]</div>
+</section>
+<section id="jumlahkan-hasil-kali-diagonal-sekunder">
+<h4>2. Jumlahkan Hasil Kali Diagonal Sekunder (/)<a class="headerlink" href="#jumlahkan-hasil-kali-diagonal-sekunder" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Diagonal 1: <span class="math notranslate nohighlight">\(1 \times 4 \times 3 = 12\)</span></p></li>
+<li><p>Diagonal 2: <span class="math notranslate nohighlight">\(2 \times 5 \times 2 = 20\)</span></p></li>
+<li><p>Diagonal 3: <span class="math notranslate nohighlight">\(1 \times 0 \times 1 = 0\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\text{Total Diagonal Sekunder} = 12 + 20 + 0 = 32\]</div>
+</section>
+<section id="hitung-determinan">
+<h4>3. Hitung Determinan<a class="headerlink" href="#hitung-determinan" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\det(A) = \text{Total Diagonal Utama} - \text{Total Diagonal Sekunder}\]</div>
+<div class="math notranslate nohighlight">
+\[\det(A) = 13 - 32\]</div>
+<div class="math notranslate nohighlight">
+\[\det(A) = -19\]</div>
+<hr class="docutils" />
+<p><strong>Kesimpulan:</strong>
+Nilai determinan dari matriks <span class="math notranslate nohighlight">\(A\)</span> adalah <strong><span class="math notranslate nohighlight">\(-19\)</span></strong>.</p>
+</section>
+</section>
+</section>
+<section id="soal-2">
+<h2>Soal 2<a class="headerlink" href="#soal-2" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3>Langkah Penyelesaian (Metode Sarrus)<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Untuk menghitung determinan matriks <span class="math notranslate nohighlight">\(3\times3\)</span> dari matriks <span class="math notranslate nohighlight">\(B\)</span>, kita dapat menuliskan kembali dua kolom pertama di sebelah kanan matriks tersebut:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{matrix}
+3 &amp; 2 &amp; 1 &amp; | &amp; 3 &amp; 2 \\
+1 &amp; 0 &amp; 4 &amp; | &amp; 1 &amp; 0 \\
+2 &amp; 5 &amp; 1 &amp; | &amp; 2 &amp; 5
+\end{matrix}\end{split}\]</div>
+<section id="jumlahkan-hasil-kali-diagonal-utama-dari-kiri-atas-ke-kanan-bawah">
+<h4>1. Jumlahkan Hasil Kali Diagonal Utama (dari kiri atas ke kanan bawah)<a class="headerlink" href="#jumlahkan-hasil-kali-diagonal-utama-dari-kiri-atas-ke-kanan-bawah" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Diagonal 1: <span class="math notranslate nohighlight">\(3 \times 0 \times 1 = 0\)</span></p></li>
+<li><p>Diagonal 2: <span class="math notranslate nohighlight">\(2 \times 4 \times 2 = 16\)</span></p></li>
+<li><p>Diagonal 3: <span class="math notranslate nohighlight">\(1 \times 1 \times 5 = 5\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\text{Total Diagonal Utama} = 0 + 16 + 5 = 21\]</div>
+</section>
+<section id="jumlahkan-hasil-kali-diagonal-sekunder-dari-kiri-bawah-ke-kanan-atas">
+<h4>2. Jumlahkan Hasil Kali Diagonal Sekunder (dari kiri bawah ke kanan atas)<a class="headerlink" href="#jumlahkan-hasil-kali-diagonal-sekunder-dari-kiri-bawah-ke-kanan-atas" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Diagonal 1: <span class="math notranslate nohighlight">\(2 \times 0 \times 1 = 0\)</span></p></li>
+<li><p>Diagonal 2: <span class="math notranslate nohighlight">\(5 \times 4 \times 3 = 60\)</span></p></li>
+<li><p>Diagonal 3: <span class="math notranslate nohighlight">\(1 \times 1 \times 2 = 2\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\text{Total Diagonal Sekunder} = 0 + 60 + 2 = 62\]</div>
+</section>
+<section id="hitung-nilai-determinan-matriks-b">
+<h4>3. Hitung Nilai Determinan Matriks B<a class="headerlink" href="#hitung-nilai-determinan-matriks-b" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\det(B) = \text{Total Diagonal Utama} - \text{Total Diagonal Sekunder}\]</div>
+<div class="math notranslate nohighlight">
+\[\det(B) = 21 - 62\]</div>
+<div class="math notranslate nohighlight">
+\[\det(B) = -41\]</div>
+<hr class="docutils" />
+<p><strong>Kesimpulan:</strong>
+Nilai determinan dari matriks <span class="math notranslate nohighlight">\(B\)</span> adalah <strong><span class="math notranslate nohighlight">\(-41\)</span></strong>.</p>
+</section>
+</section>
+</section>
+<section id="soal-3">
+<h2>Soal 3<a class="headerlink" href="#soal-3" title="Link to this heading">#</a></h2>
+<section id="langkah-penyelesaian">
+<h3>Langkah Penyelesaian<a class="headerlink" href="#langkah-penyelesaian" title="Link to this heading">#</a></h3>
+<p>Diketahui matriks:
+$<span class="math notranslate nohighlight">\(C = \begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 2 &amp; 4 &amp; 6 \\ 1 &amp; 1 &amp; 1 \end{bmatrix}\)</span>$</p>
+<section id="menghitung-nilai-det-c-menggunakan-metode-sarrus">
+<h4>1. Menghitung Nilai <span class="math notranslate nohighlight">\(\det(C)\)</span> menggunakan Metode Sarrus<a class="headerlink" href="#menghitung-nilai-det-c-menggunakan-metode-sarrus" title="Link to this heading">#</a></h4>
+<p>Tuliskan kembali dua kolom pertama di sebelah kanan matriks:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{matrix}
+1 &amp; 2 &amp; 3 &amp; | &amp; 1 &amp; 2 \\
+2 &amp; 4 &amp; 6 &amp; | &amp; 2 &amp; 4 \\
+1 &amp; 1 &amp; 1 &amp; | &amp; 1 &amp; 1
+\end{matrix}\end{split}\]</div>
+<ul class="simple">
+<li><p><strong>Jumlah Diagonal Utama (\):</strong>
+$<span class="math notranslate nohighlight">\(\text{Diagonal 1} = 1 \times 4 \times 1 = 4\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(\text{Diagonal 2} = 2 \times 6 \times 1 = 12\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(\text{Diagonal 3} = 3 \times 2 \times 1 = 6\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(\text{Total Diagonal Utama} = 4 + 12 + 6 = 22\)</span>$</p></li>
+<li><p><strong>Jumlah Diagonal Sekunder (/):</strong>
+$<span class="math notranslate nohighlight">\(\text{Diagonal 1} = 1 \times 4 \times 3 = 12\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(\text{Diagonal 2} = 1 \times 6 \times 1 = 6\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(\text{Diagonal 3} = 1 \times 2 \times 2 = 4\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(\text{Total Diagonal Sekunder} = 12 + 6 + 4 = 22\)</span>$</p></li>
+<li><p><strong>Hitung Determinan:</strong>
+$<span class="math notranslate nohighlight">\(\det(C) = \text{Total Diagonal Utama} - \text{Total Diagonal Sekunder}\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(\det(C) = 22 - 22\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(\det(C) = 0\)</span>$</p></li>
+</ul>
+<blockquote>
+<div><p><strong>Cara Cepat Alternatif (Sifat Matriks):</strong> &gt; Perhatikan baris kedua (<span class="math notranslate nohighlight">\(R_2\)</span>) merupakan kelipatan dari baris pertama (<span class="math notranslate nohighlight">\(R_1\)</span>), yaitu <span class="math notranslate nohighlight">\(R_2 = 2 \times R_1\)</span>. Jika suatu matriks memiliki baris atau kolom yang saling berkelipatan (bergantung linier), maka determinannya <strong>pasti 0</strong>.</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="penjelasan-apakah-matriks-termasuk-singular-atau-tidak">
+<h4>2. Penjelasan Apakah Matriks Termasuk Singular atau Tidak<a class="headerlink" href="#penjelasan-apakah-matriks-termasuk-singular-atau-tidak" title="Link to this heading">#</a></h4>
+<p>Berdasarkan definisi dalam aljabar linear:</p>
+<ul class="simple">
+<li><p><strong>Matriks Singular</strong> adalah matriks yang nilai determinannya sama dengan nol (<span class="math notranslate nohighlight">\(\det = 0\)</span>). Matriks jenis ini tidak memiliki invers.</p></li>
+<li><p><strong>Matriks Non-Singular</strong> adalah matriks yang nilai determinannya tidak sama dengan nol (<span class="math notranslate nohighlight">\(\det \neq 0\)</span>).</p></li>
+</ul>
+<p>Karena hasil perhitungan di atas menunjukkan bahwa <span class="math notranslate nohighlight">\(\det(C) = 0\)</span>, maka matriks <span class="math notranslate nohighlight">\(C\)</span> adalah <strong>Matriks Singular</strong>.</p>
+<hr class="docutils" />
+<p><strong>Kesimpulan:</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\det(C) = 0\)</span></p></li>
+<li><p>Matriks tersebut merupakan <strong>matriks singular</strong> karena nilai determinannya bernilai nol.</p></li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="b-soal-dekomposisi-matriks-lu-decomposition">
+<h1>B. Soal Dekomposisi Matriks (LU Decomposition)<a class="headerlink" href="#b-soal-dekomposisi-matriks-lu-decomposition" title="Link to this heading">#</a></h1>
+<section id="soal-4">
+<h2>Soal 4<a class="headerlink" href="#soal-4" title="Link to this heading">#</a></h2>
+<section id="langkah-penyelesaian-dekomposisi-lu">
+<h3>Langkah Penyelesaian (Dekomposisi LU)<a class="headerlink" href="#langkah-penyelesaian-dekomposisi-lu" title="Link to this heading">#</a></h3>
+<p>Diketahui matriks:
+$<span class="math notranslate nohighlight">\(A = \begin{bmatrix} 2 &amp; 4 &amp; 2 \\ 1 &amp; 5 &amp; 2 \\ 1 &amp; 2 &amp; 4 \end{bmatrix}\)</span>$</p>
+<p>Kita ingin memecah matriks <span class="math notranslate nohighlight">\(A\)</span> menjadi <span class="math notranslate nohighlight">\(A = LU\)</span>, di mana:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(L\)</span> (Lower Triangular) memiliki komponen utama bernilai 1 pada diagonalnya:
+$<span class="math notranslate nohighlight">\(L = \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ l_{21} &amp; 1 &amp; 0 \\ l_{31} &amp; l_{32} &amp; 1 \end{bmatrix}\)</span>$</p></li>
+<li><p><span class="math notranslate nohighlight">\(U\)</span> (Upper Triangular) berbentuk:
+$<span class="math notranslate nohighlight">\(U = \begin{bmatrix} u_{11} &amp; u_{12} &amp; u_{13} \\ 0 &amp; u_{22} &amp; u_{23} \\ 0 &amp; 0 &amp; u_{33} \end{bmatrix}\)</span>$</p></li>
+</ul>
+<p>Kita akan mencari elemen-elemen tersebut dengan melakukan operasi baris eliminasi Gauss pada matriks <span class="math notranslate nohighlight">\(A\)</span> untuk mengubahnya menjadi matriks segitiga atas (<span class="math notranslate nohighlight">\(U\)</span>), sekaligus mencatat pengali (<em>multiplier</em>) untuk mengisi matriks <span class="math notranslate nohighlight">\(L\)</span>.</p>
+<hr class="docutils" />
+<section id="langkah-1-mengeliminasi-baris-2-dan-baris-3-pada-kolom-1">
+<h4>Langkah 1: Mengeliminasi Baris 2 dan Baris 3 pada Kolom 1<a class="headerlink" href="#langkah-1-mengeliminasi-baris-2-dan-baris-3-pada-kolom-1" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Untuk Baris 2 (<span class="math notranslate nohighlight">\(R_2\)</span>):</strong>
+Pengali agar elemen pertama <span class="math notranslate nohighlight">\(R_2\)</span> menjadi 0 adalah:
+$<span class="math notranslate nohighlight">\(l_{21} = \frac{a_{21}}{a_{11}} = \frac{1}{2} = 0.5\)</span><span class="math notranslate nohighlight">\(
+Operasi baris baru: \)</span>R_2 \leftarrow R_2 - 0.5 \times R_1<span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(R_2 = [1, 5, 2] - 0.5 \times [2, 4, 2] = [0, 3, 1]\)</span>$</p></li>
+<li><p><strong>Untuk Baris 3 (<span class="math notranslate nohighlight">\(R_3\)</span>):</strong>
+Pengali agar elemen pertama <span class="math notranslate nohighlight">\(R_3\)</span> menjadi 0 adalah:
+$<span class="math notranslate nohighlight">\(l_{31} = \frac{a_{31}}{a_{11}} = \frac{1}{2} = 0.5\)</span><span class="math notranslate nohighlight">\(
+Operasi baris baru: \)</span>R_3 \leftarrow R_3 - 0.5 \times R_1<span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(R_3 = [1, 2, 4] - 0.5 \times [2, 4, 2] = [0, 0, 3]\)</span>$</p></li>
+</ul>
+<p>Setelah Langkah 1, matriks kita bertransformasi menjadi:
+$<span class="math notranslate nohighlight">\(\begin{bmatrix} 2 &amp; 4 &amp; 2 \\ 0 &amp; 3 &amp; 1 \\ 0 &amp; 0 &amp; 3 \end{bmatrix}\)</span>$</p>
+</section>
+<hr class="docutils" />
+<section id="langkah-2-mengeliminasi-baris-3-pada-kolom-2">
+<h4>Langkah 2: Mengeliminasi Baris 3 pada Kolom 2<a class="headerlink" href="#langkah-2-mengeliminasi-baris-3-pada-kolom-2" title="Link to this heading">#</a></h4>
+<p>Kebetulan, dari operasi di Langkah 1, elemen pada posisi <span class="math notranslate nohighlight">\((3,2)\)</span> sudah bernilai <span class="math notranslate nohighlight">\(0\)</span>.
+Maka kita tidak perlu melakukan eliminasi lebih lanjut untuk kolom kedua.</p>
+<ul class="simple">
+<li><p>Pengali untuk posisi ini adalah:
+$<span class="math notranslate nohighlight">\(l_{32} = \frac{0}{3} = 0\)</span>$</p></li>
+</ul>
+<p>Matriks hasil eliminasi akhir ini langsung menjadi matriks segitiga atas <strong><span class="math notranslate nohighlight">\(U\)</span></strong>:
+$<span class="math notranslate nohighlight">\(U = \begin{bmatrix} 2 &amp; 4 &amp; 2 \\ 0 &amp; 3 &amp; 1 \\ 0 &amp; 0 &amp; 3 \end{bmatrix}\)</span>$</p>
+</section>
+<hr class="docutils" />
+<section id="langkah-3-menyusun-matriks-l">
+<h4>Langkah 3: Menyusun Matriks <span class="math notranslate nohighlight">\(L\)</span><a class="headerlink" href="#langkah-3-menyusun-matriks-l" title="Link to this heading">#</a></h4>
+<p>Masukkan nilai pengali <span class="math notranslate nohighlight">\(l_{21} = 0.5\)</span>, <span class="math notranslate nohighlight">\(l_{31} = 0.5\)</span>, dan <span class="math notranslate nohighlight">\(l_{32} = 0\)</span> ke dalam format matriks <span class="math notranslate nohighlight">\(L\)</span>:
+$<span class="math notranslate nohighlight">\(L = \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0.5 &amp; 1 &amp; 0 \\ 0.5 &amp; 0 &amp; 1 \end{bmatrix}\)</span>$</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="pembuktian-a-lu">
+<h3>Pembuktian (<span class="math notranslate nohighlight">\(A = LU\)</span>)<a class="headerlink" href="#pembuktian-a-lu" title="Link to this heading">#</a></h3>
+<p>Mari kita uji kembali hasil perkalian matriks <span class="math notranslate nohighlight">\(L\)</span> dan <span class="math notranslate nohighlight">\(U\)</span>:
+$<span class="math notranslate nohighlight">\(LU = \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0.5 &amp; 1 &amp; 0 \\ 0.5 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} 2 &amp; 4 &amp; 2 \\ 0 &amp; 3 &amp; 1 \\ 0 &amp; 0 &amp; 3 \end{bmatrix}\)</span>$</p>
+<ul class="simple">
+<li><p>Baris 1:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\((1\times2) + (0\times0) + (0\times0) = 2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((1\times4) + (0\times3) + (0\times0) = 4\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((1\times2) + (0\times1) + (0\times0) = 2\)</span></p></li>
+</ul>
+</li>
+<li><p>Baris 2:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\((0.5\times2) + (1\times0) + (0\times0) = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((0.5\times4) + (1\times3) + (0\times0) = 2 + 3 = 5\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((0.5\times2) + (1\times1) + (0\times0) = 1 + 1 = 2\)</span></p></li>
+</ul>
+</li>
+<li><p>Baris 3:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\((0.5\times2) + (0\times0) + (1\times0) = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((0.5\times4) + (0\times3) + (1\times0) = 2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((0.5\times2) + (0\times1) + (1\times3) = 1 + 3 = 4\)</span></p></li>
+</ul>
+</li>
+</ul>
+<p>Hasil perkalian menghasilkan matriks <span class="math notranslate nohighlight">\(\begin{bmatrix} 2 &amp; 4 &amp; 2 \\ 1 &amp; 5 &amp; 2 \\ 1 &amp; 2 &amp; 4 \end{bmatrix}\)</span>, yang sama persis dengan matriks <span class="math notranslate nohighlight">\(A\)</span> semula.</p>
+</section>
+<hr class="docutils" />
+<section id="kesimpulan">
+<h3>Kesimpulan<a class="headerlink" href="#kesimpulan" title="Link to this heading">#</a></h3>
+<p>Hasil dekomposisi <span class="math notranslate nohighlight">\(LU\)</span> dari matriks <span class="math notranslate nohighlight">\(A\)</span> adalah:
+$<span class="math notranslate nohighlight">\(L = \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0.5 &amp; 1 &amp; 0 \\ 0.5 &amp; 0 &amp; 1 \end{bmatrix}, \quad U = \begin{bmatrix} 2 &amp; 4 &amp; 2 \\ 0 &amp; 3 &amp; 1 \\ 0 &amp; 0 &amp; 3 \end{bmatrix}\)</span>$</p>
+</section>
+</section>
+<section id="soal-5">
+<h2>Soal 5<a class="headerlink" href="#soal-5" title="Link to this heading">#</a></h2>
+<section id="langkah-penyelesaian-dekomposisi-lu-via-eliminasi-gauss">
+<h3>Langkah Penyelesaian (Dekomposisi LU via Eliminasi Gauss)<a class="headerlink" href="#langkah-penyelesaian-dekomposisi-lu-via-eliminasi-gauss" title="Link to this heading">#</a></h3>
+<p>Diketahui matriks:
+$<span class="math notranslate nohighlight">\(B = \begin{bmatrix} 1 &amp; 2 &amp; 1 \\ 2 &amp; 5 &amp; 3 \\ 4 &amp; 10 &amp; 8 \end{bmatrix}\)</span>$</p>
+<p>Kita akan mentransformasikan matriks <span class="math notranslate nohighlight">\(B\)</span> menjadi matriks segitiga atas (<span class="math notranslate nohighlight">\(U\)</span>) melalui eliminasi Gauss. Nilai pengali (<em>multiplier</em>) yang digunakan untuk membuat elemen di bawah diagonal menjadi nol akan kita simpan untuk menyusun matriks segitiga bawah (<span class="math notranslate nohighlight">\(L\)</span>).</p>
+<p>Format dasar matriks <span class="math notranslate nohighlight">\(L\)</span> dengan diagonal utama bernilai 1 adalah:
+$<span class="math notranslate nohighlight">\(L = \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ l_{21} &amp; 1 &amp; 0 \\ l_{31} &amp; l_{32} &amp; 1 \end{bmatrix}\)</span>$</p>
+<hr class="docutils" />
+<section id="langkah-1-eliminasi-kolom-1-membuat-nol-elemen-di-bawah-b-11">
+<h4>Langkah 1: Eliminasi Kolom 1 (Membuat nol elemen di bawah <span class="math notranslate nohighlight">\(b_{11}\)</span>)<a class="headerlink" href="#langkah-1-eliminasi-kolom-1-membuat-nol-elemen-di-bawah-b-11" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Untuk Baris 2 (<span class="math notranslate nohighlight">\(R_2\)</span>):</strong>
+Pengali untuk mengeliminasi elemen pertama di baris 2:
+$<span class="math notranslate nohighlight">\(l_{21} = \frac{b_{21}}{b_{11}} = \frac{2}{1} = 2\)</span><span class="math notranslate nohighlight">\(
+Operasi baris: \)</span>R_2 \leftarrow R_2 - 2 \times R_1<span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(R_2 = [2, 5, 3] - 2 \times [1, 2, 1] = [0, 1, 1]\)</span>$</p></li>
+<li><p><strong>Untuk Baris 3 (<span class="math notranslate nohighlight">\(R_3\)</span>):</strong>
+Pengali untuk mengeliminasi elemen pertama di baris 3:
+$<span class="math notranslate nohighlight">\(l_{31} = \frac{b_{31}}{b_{11}} = \frac{4}{1} = 4\)</span><span class="math notranslate nohighlight">\(
+Operasi baris: \)</span>R_3 \leftarrow R_3 - 4 \times R_1<span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(R_3 = [4, 10, 8] - 4 \times [1, 2, 1] = [0, 2, 4]\)</span>$</p></li>
+</ul>
+<p>Matriks setelah Langkah 1 menjadi:
+$<span class="math notranslate nohighlight">\(\begin{bmatrix} 1 &amp; 2 &amp; 1 \\ 0 &amp; 1 &amp; 1 \\ 0 &amp; 2 &amp; 4 \end{bmatrix}\)</span>$</p>
+</section>
+<hr class="docutils" />
+<section id="langkah-2-eliminasi-kolom-2-membuat-nol-elemen-di-bawah-posisi-2-2">
+<h4>Langkah 2: Eliminasi Kolom 2 (Membuat nol elemen di bawah posisi <span class="math notranslate nohighlight">\((2,2)\)</span>)<a class="headerlink" href="#langkah-2-eliminasi-kolom-2-membuat-nol-elemen-di-bawah-posisi-2-2" title="Link to this heading">#</a></h4>
+<p>Gunakan baris kedua yang baru untuk mengeliminasi elemen kedua pada baris ketiga.</p>
+<ul class="simple">
+<li><p><strong>Untuk Baris 3 (<span class="math notranslate nohighlight">\(R_3\)</span>):</strong>
+Pengali untuk mengeliminasi elemen kedua di baris 3:
+$<span class="math notranslate nohighlight">\(l_{32} = \frac{2}{1} = 2\)</span><span class="math notranslate nohighlight">\(
+Operasi baris: \)</span>R_3 \leftarrow R_3 - 2 \times R_2<span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(R_3 = [0, 2, 4] - 2 \times [0, 1, 1] = [0, 0, 2]\)</span>$</p></li>
+</ul>
+<p>Matriks hasil akhir ini merupakan matriks segitiga atas <strong><span class="math notranslate nohighlight">\(U\)</span></strong>:
+$<span class="math notranslate nohighlight">\(U = \begin{bmatrix} 1 &amp; 2 &amp; 1 \\ 0 &amp; 1 &amp; 1 \\ 0 &amp; 0 &amp; 2 \end{bmatrix}\)</span>$</p>
+</section>
+<hr class="docutils" />
+<section id="id2">
+<h4>Langkah 3: Menyusun Matriks <span class="math notranslate nohighlight">\(L\)</span><a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p>Masukkan nilai pengali yang sudah kita dapatkan (<span class="math notranslate nohighlight">\(l_{21} = 2\)</span>, <span class="math notranslate nohighlight">\(l_{31} = 4\)</span>, dan <span class="math notranslate nohighlight">\(l_{32} = 2\)</span>) ke dalam matriks <span class="math notranslate nohighlight">\(L\)</span>:
+$<span class="math notranslate nohighlight">\(L = \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 2 &amp; 1 &amp; 0 \\ 4 &amp; 2 &amp; 1 \end{bmatrix}\)</span>$</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="pembuktian-b-lu">
+<h3>Pembuktian (<span class="math notranslate nohighlight">\(B = LU\)</span>)<a class="headerlink" href="#pembuktian-b-lu" title="Link to this heading">#</a></h3>
+<p>Mari kita kalikan kembali matriks <span class="math notranslate nohighlight">\(L\)</span> dan <span class="math notranslate nohighlight">\(U\)</span> untuk memastikan hasilnya sama dengan matriks <span class="math notranslate nohighlight">\(B\)</span>:
+$<span class="math notranslate nohighlight">\(LU = \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 2 &amp; 1 &amp; 0 \\ 4 &amp; 2 &amp; 1 \end{bmatrix} \begin{bmatrix} 1 &amp; 2 &amp; 1 \\ 0 &amp; 1 &amp; 1 \\ 0 &amp; 0 &amp; 2 \end{bmatrix}\)</span>$</p>
+<ul class="simple">
+<li><p>Baris 1:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\((1\times1) + (0\times0) + (0\times0) = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((1\times2) + (0\times1) + (0\times0) = 2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((1\times1) + (0\times1) + (0\times0) = 1\)</span></p></li>
+</ul>
+</li>
+<li><p>Baris 2:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\((2\times1) + (1\times0) + (0\times0) = 2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((2\times2) + (1\times1) + (0\times0) = 4 + 1 = 5\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((2\times1) + (1\times1) + (0\times0) = 2 + 1 = 3\)</span></p></li>
+</ul>
+</li>
+<li><p>Baris 3:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\((4\times1) + (2\times0) + (1\times0) = 4\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((4\times2) + (2\times1) + (1\times0) = 8 + 2 = 10\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((4\times1) + (2\times1) + (1\times2) = 4 + 2 + 2 = 8\)</span></p></li>
+</ul>
+</li>
+</ul>
+<p>Hasil perkalian menghasilkan matriks <span class="math notranslate nohighlight">\(\begin{bmatrix} 1 &amp; 2 &amp; 1 \\ 2 &amp; 5 &amp; 3 \\ 4 &amp; 10 &amp; 8 \end{bmatrix}\)</span>, cocok dengan matriks <span class="math notranslate nohighlight">\(B\)</span> mula-mula.</p>
+</section>
+<hr class="docutils" />
+<section id="id3">
+<h3>Kesimpulan<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Matriks <span class="math notranslate nohighlight">\(L\)</span> dan <span class="math notranslate nohighlight">\(U\)</span> dari matriks <span class="math notranslate nohighlight">\(B\)</span> adalah:
+$<span class="math notranslate nohighlight">\(L = \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 2 &amp; 1 &amp; 0 \\ 4 &amp; 2 &amp; 1 \end{bmatrix}, \quad U = \begin{bmatrix} 1 &amp; 2 &amp; 1 \\ 0 &amp; 1 &amp; 1 \\ 0 &amp; 0 &amp; 2 \end{bmatrix}\)</span>$</p>
+</section>
+</section>
+<section id="soal-6">
+<h2>Soal 6<a class="headerlink" href="#soal-6" title="Link to this heading">#</a></h2>
+<section id="id4">
+<h3>Langkah Penyelesaian (Dekomposisi LU)<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>Diketahui matriks:
+$<span class="math notranslate nohighlight">\(C = \begin{bmatrix} 4 &amp; 2 &amp; 0 \\ 2 &amp; 5 &amp; 1 \\ 0 &amp; 1 &amp; 3 \end{bmatrix}\)</span>$</p>
+<p>Kita akan mencari matriks segitiga bawah <span class="math notranslate nohighlight">\(L\)</span> dan matriks segitiga atas <span class="math notranslate nohighlight">\(U\)</span> sedemikian rupa sehingga <span class="math notranslate nohighlight">\(C = LU\)</span>.
+Format dasar matriks <span class="math notranslate nohighlight">\(L\)</span> dengan diagonal utama bernilai 1 adalah:
+$<span class="math notranslate nohighlight">\(L = \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ l_{21} &amp; 1 &amp; 0 \\ l_{31} &amp; l_{32} &amp; 1 \end{bmatrix}\)</span>$</p>
+<hr class="docutils" />
+<section id="langkah-1-eliminasi-kolom-1-membuat-nol-elemen-di-bawah-c-11">
+<h4>Langkah 1: Eliminasi Kolom 1 (Membuat nol elemen di bawah <span class="math notranslate nohighlight">\(c_{11}\)</span>)<a class="headerlink" href="#langkah-1-eliminasi-kolom-1-membuat-nol-elemen-di-bawah-c-11" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Untuk Baris 2 (<span class="math notranslate nohighlight">\(R_2\)</span>):</strong>
+Pengali (<em>multiplier</em>) untuk posisi <span class="math notranslate nohighlight">\((2,1)\)</span> adalah:
+$<span class="math notranslate nohighlight">\(l_{21} = \frac{c_{21}}{c_{11}} = \frac{2}{4} = 0.5\)</span><span class="math notranslate nohighlight">\(
+Operasi baris baru: \)</span>R_2 \leftarrow R_2 - 0.5 \times R_1<span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(R_2 = [2, 5, 1] - 0.5 \times [4, 2, 0] = [0, 4, 1]\)</span>$</p></li>
+<li><p><strong>Untuk Baris 3 (<span class="math notranslate nohighlight">\(R_3\)</span>):</strong>
+Elemen pertama pada baris 3 sudah bernilai <span class="math notranslate nohighlight">\(0\)</span>. Maka tidak perlu dilakukan operasi eliminasi.
+Pengali untuk posisi <span class="math notranslate nohighlight">\((3,1)\)</span> adalah:
+$<span class="math notranslate nohighlight">\(l_{31} = \frac{0}{4} = 0\)</span>$</p></li>
+</ul>
+<p>Matriks kita setelah Langkah 1 bertransformasi menjadi:
+$<span class="math notranslate nohighlight">\(\begin{bmatrix} 4 &amp; 2 &amp; 0 \\ 0 &amp; 4 &amp; 1 \\ 0 &amp; 1 &amp; 3 \end{bmatrix}\)</span>$</p>
+</section>
+<hr class="docutils" />
+<section id="id5">
+<h4>Langkah 2: Eliminasi Kolom 2 (Membuat nol elemen di bawah posisi <span class="math notranslate nohighlight">\((2,2)\)</span>)<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
+<p>Gunakan baris kedua yang baru untuk mengeliminasi elemen kedua pada baris ketiga.</p>
+<ul class="simple">
+<li><p><strong>Untuk Baris 3 (<span class="math notranslate nohighlight">\(R_3\)</span>):</strong>
+Pengali (<em>multiplier</em>) untuk posisi <span class="math notranslate nohighlight">\((3,2)\)</span> adalah:
+$<span class="math notranslate nohighlight">\(l_{32} = \frac{1}{4} = 0.25\)</span><span class="math notranslate nohighlight">\(
+Operasi baris baru: \)</span>R_3 \leftarrow R_3 - 0.25 \times R_2<span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(R_3 = [0, 1, 3] - 0.25 \times [0, 4, 1] = [0, 0, 2.75]\)</span>$</p></li>
+</ul>
+<p>Matriks hasil eliminasi akhir ini menjadi matriks segitiga atas <strong><span class="math notranslate nohighlight">\(U\)</span></strong>:
+$<span class="math notranslate nohighlight">\(U = \begin{bmatrix} 4 &amp; 2 &amp; 0 \\ 0 &amp; 4 &amp; 1 \\ 0 &amp; 0 &amp; 2.75 \end{bmatrix}\)</span>$</p>
+<p><em>(Catatan: <span class="math notranslate nohighlight">\(2.75\)</span> sama dengan pecahan <span class="math notranslate nohighlight">\(\frac{11}{4}\)</span>)</em></p>
+</section>
+<hr class="docutils" />
+<section id="id6">
+<h4>Langkah 3: Menyusun Matriks <span class="math notranslate nohighlight">\(L\)</span><a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+<p>Masukkan semua nilai pengali (<span class="math notranslate nohighlight">\(l_{21} = 0.5\)</span>, <span class="math notranslate nohighlight">\(l_{31} = 0\)</span>, dan <span class="math notranslate nohighlight">\(l_{32} = 0.25\)</span>) ke dalam komponen matriks <span class="math notranslate nohighlight">\(L\)</span>:
+$<span class="math notranslate nohighlight">\(L = \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0.5 &amp; 1 &amp; 0 \\ 0 &amp; 0.25 &amp; 1 \end{bmatrix}\)</span>$</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="pembuktian-c-lu">
+<h3>Pembuktian (<span class="math notranslate nohighlight">\(C = LU\)</span>)<a class="headerlink" href="#pembuktian-c-lu" title="Link to this heading">#</a></h3>
+<p>Mari kita uji perkalian matriks <span class="math notranslate nohighlight">\(L\)</span> dan <span class="math notranslate nohighlight">\(U\)</span> untuk memastikan hasilnya kembali menjadi matriks <span class="math notranslate nohighlight">\(C\)</span>:
+$<span class="math notranslate nohighlight">\(LU = \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0.5 &amp; 1 &amp; 0 \\ 0 &amp; 0.25 &amp; 1 \end{bmatrix} \begin{bmatrix} 4 &amp; 2 &amp; 0 \\ 0 &amp; 4 &amp; 1 \\ 0 &amp; 0 &amp; 2.75 \end{bmatrix}\)</span>$</p>
+<ul class="simple">
+<li><p>Baris 1:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\((1\times4) + (0\times0) + (0\times0) = 4\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((1\times2) + (0\times4) + (0\times0) = 2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((1\times0) + (0\times1) + (0\times2.75) = 0\)</span></p></li>
+</ul>
+</li>
+<li><p>Baris 2:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\((0.5\times4) + (1\times0) + (0\times0) = 2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((0.5\times2) + (1\times4) + (0\times0) = 1 + 4 = 5\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((0.5\times0) + (1\times1) + (0\times2.75) = 1\)</span></p></li>
+</ul>
+</li>
+<li><p>Baris 3:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\((0\times4) + (0.25\times0) + (1\times0) = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((0\times2) + (0.25\times4) + (1\times0) = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((0\times0) + (0.25\times1) + (1\times2.75) = 0.25 + 2.75 = 3\)</span></p></li>
+</ul>
+</li>
+</ul>
+<p>Hasil perkalian menghasilkan matriks <span class="math notranslate nohighlight">\(\begin{bmatrix} 4 &amp; 2 &amp; 0 \\ 2 &amp; 5 &amp; 1 \\ 0 &amp; 1 &amp; 3 \end{bmatrix}\)</span>, yang terbukti sama dengan matriks <span class="math notranslate nohighlight">\(C\)</span>.</p>
+</section>
+<hr class="docutils" />
+<section id="id7">
+<h3>Kesimpulan<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<p>Hasil dekomposisi <span class="math notranslate nohighlight">\(LU\)</span> dari matriks <span class="math notranslate nohighlight">\(C\)</span> adalah:
+$<span class="math notranslate nohighlight">\(L = \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0.5 &amp; 1 &amp; 0 \\ 0 &amp; 0.25 &amp; 1 \end{bmatrix}, \quad U = \begin{bmatrix} 4 &amp; 2 &amp; 0 \\ 0 &amp; 4 &amp; 1 \\ 0 &amp; 0 &amp; 2.75 \end{bmatrix}\)</span>$</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="c-soal-invers-matriks-33">
+<h1>C. Soal Invers Matriks 3×3<a class="headerlink" href="#c-soal-invers-matriks-33" title="Link to this heading">#</a></h1>
+<section id="soal-7">
+<h2>Soal 7<a class="headerlink" href="#soal-7" title="Link to this heading">#</a></h2>
+<section id="langkah-penyelesaian-mencari-invers-dengan-metode-adjoin">
+<h3>Langkah Penyelesaian (Mencari Invers dengan Metode Adjoin)<a class="headerlink" href="#langkah-penyelesaian-mencari-invers-dengan-metode-adjoin" title="Link to this heading">#</a></h3>
+<p>Diketahui matriks:
+$<span class="math notranslate nohighlight">\(A = \begin{bmatrix} 1 &amp; 2 &amp; 1 \\ 0 &amp; 1 &amp; 1 \\ 2 &amp; 3 &amp; 4 \end{bmatrix}\)</span>$</p>
+<p>Rumus invers matriks adalah:
+$<span class="math notranslate nohighlight">\(A^{-1} = \frac{1}{\det(A)} \cdot \text{Adj}(A)\)</span>$</p>
+<hr class="docutils" />
+<section id="langkah-1-menghitung-determinan-matriks-a-det-a">
+<h4>Langkah 1: Menghitung Determinan Matriks <span class="math notranslate nohighlight">\(A\)</span> (<span class="math notranslate nohighlight">\(\det(A)\)</span>)<a class="headerlink" href="#langkah-1-menghitung-determinan-matriks-a-det-a" title="Link to this heading">#</a></h4>
+<p>Menggunakan Metode Sarrus:
+$<span class="math notranslate nohighlight">\(\begin{matrix}
+1 &amp; 2 &amp; 1 &amp; | &amp; 1 &amp; 2 \\
+0 &amp; 1 &amp; 1 &amp; | &amp; 0 &amp; 1 \\
+2 &amp; 3 &amp; 4 &amp; | &amp; 2 &amp; 3
+\end{matrix}\)</span>$</p>
+<ul class="simple">
+<li><p><strong>Total Diagonal Utama (\):</strong>
+$<span class="math notranslate nohighlight">\((1 \times 1 \times 4) + (2 \times 1 \times 2) + (1 \times 0 \times 3) = 4 + 4 + 0 = 8\)</span>$</p></li>
+<li><p><strong>Total Diagonal Sekunder (/):</strong>
+$<span class="math notranslate nohighlight">\((2 \times 1 \times 1) + (3 \times 1 \times 1) + (4 \times 0 \times 2) = 2 + 3 + 0 = 5\)</span>$</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\det(A) = 8 - 5 = 3\]</div>
+<p>Karena <span class="math notranslate nohighlight">\(\det(A) \neq 0\)</span>, matriks memiliki invers.</p>
+</section>
+<hr class="docutils" />
+<section id="langkah-2-menghitung-matriks-kofaktor">
+<h4>Langkah 2: Menghitung Matriks Kofaktor<a class="headerlink" href="#langkah-2-menghitung-matriks-kofaktor" title="Link to this heading">#</a></h4>
+<p>Kofaktor diperoleh dengan menghitung nilai determinan minor <span class="math notranslate nohighlight">\(2\times2\)</span> setelah menghapus baris ke-<span class="math notranslate nohighlight">\(i\)</span> dan kolom ke-<span class="math notranslate nohighlight">\(j\)</span>, lalu dikalikan tanda selang-seling (+ / -).</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\text{Kof}(A) = \begin{bmatrix}
++\begin{vmatrix} 1 &amp; 1 \\ 3 &amp; 4 \end{vmatrix} &amp; -\begin{vmatrix} 0 &amp; 1 \\ 2 &amp; 4 \end{vmatrix} &amp; +\begin{vmatrix} 0 &amp; 1 \\ 2 &amp; 3 \end{vmatrix} \\
+-\begin{vmatrix} 2 &amp; 1 \\ 3 &amp; 4 \end{vmatrix} &amp; +\begin{vmatrix} 1 &amp; 1 \\ 2 &amp; 4 \end{vmatrix} &amp; -\begin{vmatrix} 1 &amp; 2 \\ 2 &amp; 3 \end{vmatrix} \\
++\begin{vmatrix} 2 &amp; 1 \\ 1 &amp; 1 \end{vmatrix} &amp; -\begin{vmatrix} 1 &amp; 1 \\ 0 &amp; 1 \end{vmatrix} &amp; +\begin{vmatrix} 1 &amp; 2 \\ 0 &amp; 1 \end{vmatrix}
+\end{bmatrix}\end{split}\]</div>
+<p>Mari kita hitung satu per satu elemennya:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(c_{11} = +(4 - 3) = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_{12} = -(0 - 2) = 2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_{13} = +(0 - 2) = -2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_{21} = -(8 - 3) = -5\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_{22} = +(4 - 2) = 2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_{23} = -(3 - 4) = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_{31} = +(2 - 1) = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_{32} = -(1 - 0) = -1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_{33} = +(1 - 0) = 1\)</span></p></li>
+</ul>
+<p>Maka matriks kofaktornya adalah:
+$<span class="math notranslate nohighlight">\(\text{Kof}(A) = \begin{bmatrix} 1 &amp; 2 &amp; -2 \\ -5 &amp; 2 &amp; 1 \\ 1 &amp; -1 &amp; 1 \end{bmatrix}\)</span>$</p>
+</section>
+<hr class="docutils" />
+<section id="langkah-3-menentukan-matriks-adjoin-text-adj-a">
+<h4>Langkah 3: Menentukan Matriks Adjoin (<span class="math notranslate nohighlight">\(\text{Adj}(A)\)</span>)<a class="headerlink" href="#langkah-3-menentukan-matriks-adjoin-text-adj-a" title="Link to this heading">#</a></h4>
+<p>Adjoin adalah hasil transpose (tukar baris menjadi kolom) dari matriks kofaktor:
+$<span class="math notranslate nohighlight">\(\text{Adj}(A) = (\text{Kof}(A))^T = \begin{bmatrix} 1 &amp; -5 &amp; 1 \\ 2 &amp; 2 &amp; -1 \\ -2 &amp; 1 &amp; 1 \end{bmatrix}\)</span>$</p>
+</section>
+<hr class="docutils" />
+<section id="langkah-4-menghitung-invers-matriks-a-a-1">
+<h4>Langkah 4: Menghitung Invers Matriks <span class="math notranslate nohighlight">\(A\)</span> (<span class="math notranslate nohighlight">\(A^{-1}\)</span>)<a class="headerlink" href="#langkah-4-menghitung-invers-matriks-a-a-1" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}A^{-1} = \frac{1}{3} \begin{bmatrix} 1 &amp; -5 &amp; 1 \\ 2 &amp; 2 &amp; -1 \\ -2 &amp; 1 &amp; 1 \end{bmatrix}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}A^{-1} = \begin{bmatrix} \frac{1}{3} &amp; -\frac{5}{3} &amp; \frac{1}{3} \\ \frac{2}{3} &amp; \frac{2}{3} &amp; -\frac{1}{3} \\ -\frac{2}{3} &amp; \frac{1}{3} &amp; \frac{1}{3} \end{bmatrix}\end{split}\]</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="pembuktian-a-times-a-1-i">
+<h3>Pembuktian (<span class="math notranslate nohighlight">\(A \times A^{-1} = I\)</span>)<a class="headerlink" href="#pembuktian-a-times-a-1-i" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix} 1 &amp; 2 &amp; 1 \\ 0 &amp; 1 &amp; 1 \\ 2 &amp; 3 &amp; 4 \end{bmatrix} \begin{bmatrix} \frac{1}{3} &amp; -\frac{5}{3} &amp; \frac{1}{3} \\ \frac{2}{3} &amp; \frac{2}{3} &amp; -\frac{1}{3} \\ -\frac{2}{3} &amp; \frac{1}{3} &amp; \frac{1}{3} \end{bmatrix} = \begin{bmatrix} \frac{1+4-2}{3} &amp; \frac{-5+4+1}{3} &amp; \frac{1-2+1}{3} \\ \frac{0+2-2}{3} &amp; \frac{0+2+1}{3} &amp; \frac{0-1+1}{3} \\ \frac{2+6-8}{3} &amp; \frac{-10+6+4}{3} &amp; \frac{2-3+4}{3} \end{bmatrix} = \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}\end{split}\]</div>
+<p>Terbukti menghasilkan Matriks Identitas (<span class="math notranslate nohighlight">\(I\)</span>).</p>
+</section>
+<hr class="docutils" />
+<section id="id8">
+<h3>Kesimpulan<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<p>Invers dari matriks <span class="math notranslate nohighlight">\(A\)</span> adalah:
+$<span class="math notranslate nohighlight">\(A^{-1} = \begin{bmatrix} \frac{1}{3} &amp; -\frac{5}{3} &amp; \frac{1}{3} \\ \frac{2}{3} &amp; \frac{2}{3} &amp; -\frac{1}{3} \\ -\frac{2}{3} &amp; \frac{1}{3} &amp; \frac{1}{3} \end{bmatrix}\)</span>$</p>
+</section>
+</section>
+<section id="soal-8">
+<h2>Soal 8<a class="headerlink" href="#soal-8" title="Link to this heading">#</a></h2>
+<section id="id9">
+<h3>Langkah Penyelesaian (Mencari Invers dengan Metode Adjoin)<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<p>Diketahui matriks:
+$<span class="math notranslate nohighlight">\(B = \begin{bmatrix} 2 &amp; 1 &amp; 0 \\ 1 &amp; 2 &amp; 1 \\ 0 &amp; 1 &amp; 2 \end{bmatrix}\)</span>$</p>
+<p>Rumus invers matriks adalah:
+$<span class="math notranslate nohighlight">\(B^{-1} = \frac{1}{\det(B)} \cdot \text{Adj}(B)\)</span>$</p>
+<hr class="docutils" />
+<section id="langkah-1-menghitung-determinan-matriks-b-det-b">
+<h4>Langkah 1: Menghitung Determinan Matriks <span class="math notranslate nohighlight">\(B\)</span> (<span class="math notranslate nohighlight">\(\det(B)\)</span>)<a class="headerlink" href="#langkah-1-menghitung-determinan-matriks-b-det-b" title="Link to this heading">#</a></h4>
+<p>Menggunakan Metode Sarrus, tulis kembali dua kolom pertama di sebelah kanan matriks:
+$<span class="math notranslate nohighlight">\(\begin{matrix}
+2 &amp; 1 &amp; 0 &amp; | &amp; 2 &amp; 1 \\
+1 &amp; 2 &amp; 1 &amp; | &amp; 1 &amp; 2 \\
+0 &amp; 1 &amp; 2 &amp; | &amp; 0 &amp; 1
+\end{matrix}\)</span>$</p>
+<ul class="simple">
+<li><p><strong>Total Diagonal Utama (\):</strong>
+$<span class="math notranslate nohighlight">\((2 \times 2 \times 2) + (1 \times 1 \times 0) + (0 \times 1 \times 1) = 8 + 0 + 0 = 8\)</span>$</p></li>
+<li><p><strong>Total Diagonal Sekunder (/):</strong>
+$<span class="math notranslate nohighlight">\((0 \times 2 \times 0) + (1 \times 1 \times 2) + (2 \times 1 \times 1) = 0 + 2 + 2 = 4\)</span>$</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\det(B) = 8 - 4 = 4\]</div>
+</section>
+<hr class="docutils" />
+<section id="id10">
+<h4>Langkah 2: Menghitung Matriks Kofaktor<a class="headerlink" href="#id10" title="Link to this heading">#</a></h4>
+<p>Kita cari determinan minor <span class="math notranslate nohighlight">\(2\times2\)</span> untuk setiap elemen dengan memberikan tanda selang-seling (+ / -):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\text{Kof}(B) = \begin{bmatrix}
++\begin{vmatrix} 2 &amp; 1 \\ 1 &amp; 2 \end{vmatrix} &amp; -\begin{vmatrix} 1 &amp; 1 \\ 0 &amp; 2 \end{vmatrix} &amp; +\begin{vmatrix} 1 &amp; 2 \\ 0 &amp; 1 \end{vmatrix} \\
+-\begin{vmatrix} 1 &amp; 0 \\ 1 &amp; 2 \end{vmatrix} &amp; +\begin{vmatrix} 2 &amp; 0 \\ 0 &amp; 2 \end{vmatrix} &amp; -\begin{vmatrix} 2 &amp; 1 \\ 0 &amp; 1 \end{vmatrix} \\
++\begin{vmatrix} 1 &amp; 0 \\ 2 &amp; 1 \end{vmatrix} &amp; -\begin{vmatrix} 2 &amp; 0 \\ 1 &amp; 1 \end{vmatrix} &amp; +\begin{vmatrix} 2 &amp; 1 \\ 1 &amp; 2 \end{vmatrix}
+\end{bmatrix}\end{split}\]</div>
+<p>Perhitungan elemen kofaktor:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(c_{11} = +(4 - 1) = 3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_{12} = -(2 - 0) = -2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_{13} = +(1 - 0) = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_{21} = -(2 - 0) = -2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_{22} = +(4 - 0) = 4\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_{23} = -(2 - 0) = -2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_{31} = +(1 - 0) = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_{32} = -(2 - 0) = -2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_{33} = +(4 - 1) = 3\)</span></p></li>
+</ul>
+<p>Maka matriks kofaktornya adalah:
+$<span class="math notranslate nohighlight">\(\text{Kof}(B) = \begin{bmatrix} 3 &amp; -2 &amp; 1 \\ -2 &amp; 4 &amp; -2 \\ 1 &amp; -2 &amp; 3 \end{bmatrix}\)</span>$</p>
+</section>
+<hr class="docutils" />
+<section id="langkah-3-menentukan-matriks-adjoin-text-adj-b">
+<h4>Langkah 3: Menentukan Matriks Adjoin (<span class="math notranslate nohighlight">\(\text{Adj}(B)\)</span>)<a class="headerlink" href="#langkah-3-menentukan-matriks-adjoin-text-adj-b" title="Link to this heading">#</a></h4>
+<p>Adjoin diperoleh dengan melakukan transpose pada matriks kofaktor. Karena matriks kofaktor di atas bersifat simetris, maka hasil transposenya akan sama persis:
+$<span class="math notranslate nohighlight">\(\text{Adj}(B) = (\text{Kof}(B))^T = \begin{bmatrix} 3 &amp; -2 &amp; 1 \\ -2 &amp; 4 &amp; -2 \\ 1 &amp; -2 &amp; 3 \end{bmatrix}\)</span>$</p>
+</section>
+<hr class="docutils" />
+<section id="langkah-4-menghitung-invers-matriks-b-b-1">
+<h4>Langkah 4: Menghitung Invers Matriks <span class="math notranslate nohighlight">\(B\)</span> (<span class="math notranslate nohighlight">\(B^{-1}\)</span>)<a class="headerlink" href="#langkah-4-menghitung-invers-matriks-b-b-1" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}B^{-1} = \frac{1}{4} \begin{bmatrix} 3 &amp; -2 &amp; 1 \\ -2 &amp; 4 &amp; -2 \\ 1 &amp; -2 &amp; 3 \end{bmatrix}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}B^{-1} = \begin{bmatrix} \frac{3}{4} &amp; -\frac{2}{4} &amp; \frac{1}{4} \\ -\frac{2}{4} &amp; \frac{4}{4} &amp; -\frac{2}{4} \\ \frac{1}{4} &amp; -\frac{2}{4} &amp; \frac{3}{4} \end{bmatrix} = \begin{bmatrix} \frac{3}{4} &amp; -\frac{1}{2} &amp; \frac{1}{4} \\ -\frac{1}{2} &amp; 1 &amp; -\frac{1}{2} \\ \frac{1}{4} &amp; -\frac{1}{2} &amp; \frac{3}{4} \end{bmatrix}\end{split}\]</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id11">
+<h3>Kesimpulan<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<p>Invers dari matriks <span class="math notranslate nohighlight">\(B\)</span> adalah:
+$<span class="math notranslate nohighlight">\(B^{-1} = \begin{bmatrix} \frac{3}{4} &amp; -\frac{1}{2} &amp; \frac{1}{4} \\ -\frac{1}{2} &amp; 1 &amp; -\frac{1}{2} \\ \frac{1}{4} &amp; -\frac{1}{2} &amp; \frac{3}{4} \end{bmatrix}\)</span>$</p>
+</section>
+</section>
+<section id="soal-9">
+<h2>Soal 9<a class="headerlink" href="#soal-9" title="Link to this heading">#</a></h2>
+<section id="id12">
+<h3>Langkah Penyelesaian (Mencari Invers dengan Metode Adjoin)<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<p>Diketahui matriks:
+$<span class="math notranslate nohighlight">\(C = \begin{bmatrix} 3 &amp; 0 &amp; 2 \\ 2 &amp; 0 &amp; -2 \\ 0 &amp; 1 &amp; 1 \end{bmatrix}\)</span>$</p>
+<p>Rumus invers matriks adalah:
+$<span class="math notranslate nohighlight">\(C^{-1} = \frac{1}{\det(C)} \cdot \text{Adj}(C)\)</span>$</p>
+<hr class="docutils" />
+<section id="langkah-1-menghitung-determinan-matriks-c-det-c">
+<h4>Langkah 1: Menghitung Determinan Matriks <span class="math notranslate nohighlight">\(C\)</span> (<span class="math notranslate nohighlight">\(\det(C)\)</span>)<a class="headerlink" href="#langkah-1-menghitung-determinan-matriks-c-det-c" title="Link to this heading">#</a></h4>
+<p>Menggunakan Metode Sarrus, kita tulis kembali dua kolom pertama di sebelah kanan matriks:
+$<span class="math notranslate nohighlight">\(\begin{matrix}
+3 &amp; 0 &amp; 2 &amp; | &amp; 3 &amp; 0 \\
+2 &amp; 0 &amp; -2 &amp; | &amp; 2 &amp; 0 \\
+0 &amp; 1 &amp; 1 &amp; | &amp; 0 &amp; 1
+\end{matrix}\)</span>$</p>
+<ul class="simple">
+<li><p><strong>Total Diagonal Utama (\):</strong>
+$<span class="math notranslate nohighlight">\((3 \times 0 \times 1) + (0 \times -2 \times 0) + (2 \times 2 \times 1) = 0 + 0 + 4 = 4\)</span>$</p></li>
+<li><p><strong>Total Diagonal Sekunder (/):</strong>
+$<span class="math notranslate nohighlight">\((0 \times 0 \times 2) + (1 \times -2 \times 3) + (1 \times 2 \times 0) = 0 + (-6) + 0 = -6\)</span>$</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\det(C) = 4 - (-6) = 4 + 6 = 10\]</div>
+</section>
+<hr class="docutils" />
+<section id="id13">
+<h4>Langkah 2: Menghitung Matriks Kofaktor<a class="headerlink" href="#id13" title="Link to this heading">#</a></h4>
+<p>Kita hitung nilai determinan minor <span class="math notranslate nohighlight">\(2\times2\)</span> untuk setiap posisi dengan tanda selang-seling (+ / -):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\text{Kof}(C) = \begin{bmatrix}
++\begin{vmatrix} 0 &amp; -2 \\ 1 &amp; 1 \end{vmatrix} &amp; -\begin{vmatrix} 2 &amp; -2 \\ 0 &amp; 1 \end{vmatrix} &amp; +\begin{vmatrix} 2 &amp; 0 \\ 0 &amp; 1 \end{vmatrix} \\
+-\begin{vmatrix} 0 &amp; 2 \\ 1 &amp; 1 \end{vmatrix} &amp; +\begin{vmatrix} 3 &amp; 2 \\ 0 &amp; 1 \end{vmatrix} &amp; -\begin{vmatrix} 3 &amp; 0 \\ 0 &amp; 1 \end{vmatrix} \\
++\begin{vmatrix} 0 &amp; 2 \\ 0 &amp; -2 \end{vmatrix} &amp; -\begin{vmatrix} 3 &amp; 2 \\ 2 &amp; -2 \end{vmatrix} &amp; +\begin{vmatrix} 3 &amp; 0 \\ 2 &amp; 0 \end{vmatrix}
+\end{bmatrix}\end{split}\]</div>
+<p>Perhitungan masing-masing komponen:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(c_{11} = +(0 - (-2)) = 2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_{12} = -(2 - 0) = -2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_{13} = +(2 - 0) = 2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_{21} = -(0 - 2) = 2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_{22} = +(3 - 0) = 3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_{23} = -(3 - 0) = -3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_{31} = +(0 - 0) = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_{32} = -(-6 - 4) = -(-10) = 10\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_{33} = +(0 - 0) = 0\)</span></p></li>
+</ul>
+<p>Maka matriks kofaktornya adalah:
+$<span class="math notranslate nohighlight">\(\text{Kof}(C) = \begin{bmatrix} 2 &amp; -2 &amp; 2 \\ 2 &amp; 3 &amp; -3 \\ 0 &amp; 10 &amp; 0 \end{bmatrix}\)</span>$</p>
+</section>
+<hr class="docutils" />
+<section id="langkah-3-menentukan-matriks-adjoin-text-adj-c">
+<h4>Langkah 3: Menentukan Matriks Adjoin (<span class="math notranslate nohighlight">\(\text{Adj}(C)\)</span>)<a class="headerlink" href="#langkah-3-menentukan-matriks-adjoin-text-adj-c" title="Link to this heading">#</a></h4>
+<p>Adjoin diperoleh dengan melakukan transpose (menukar baris menjadi kolom) pada matriks kofaktor:
+$<span class="math notranslate nohighlight">\(\text{Adj}(C) = (\text{Kof}(C))^T = \begin{bmatrix} 2 &amp; 2 &amp; 0 \\ -2 &amp; 3 &amp; 10 \\ 2 &amp; -3 &amp; 0 \end{bmatrix}\)</span>$</p>
+</section>
+<hr class="docutils" />
+<section id="langkah-4-menghitung-invers-matriks-c-c-1">
+<h4>Langkah 4: Menghitung Invers Matriks <span class="math notranslate nohighlight">\(C\)</span> (<span class="math notranslate nohighlight">\(C^{-1}\)</span>)<a class="headerlink" href="#langkah-4-menghitung-invers-matriks-c-c-1" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}C^{-1} = \frac{1}{10} \begin{bmatrix} 2 &amp; 2 &amp; 0 \\ -2 &amp; 3 &amp; 10 \\ 2 &amp; -3 &amp; 0 \end{bmatrix}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}C^{-1} = \begin{bmatrix} \frac{2}{10} &amp; \frac{2}{10} &amp; \frac{0}{10} \\ -\frac{2}{10} &amp; \frac{3}{10} &amp; \frac{10}{10} \\ \frac{2}{10} &amp; -\frac{3}{10} &amp; \frac{0}{10} \end{bmatrix} = \begin{bmatrix} \frac{1}{5} &amp; \frac{1}{5} &amp; 0 \\ -\frac{1}{5} &amp; \frac{3}{10} &amp; 1 \\ \frac{1}{5} &amp; -\frac{3}{10} &amp; 0 \end{bmatrix}\end{split}\]</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id14">
+<h3>Kesimpulan<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
+<p>Invers dari matriks <span class="math notranslate nohighlight">\(C\)</span> adalah:
+$<span class="math notranslate nohighlight">\(C^{-1} = \begin{bmatrix} \frac{1}{5} &amp; \frac{1}{5} &amp; 0 \\ -\frac{1}{5} &amp; \frac{3}{10} &amp; 1 \\ \frac{1}{5} &amp; -\frac{3}{10} &amp; 0 \end{bmatrix}\)</span>$</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="determinan.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Determinan Matriks Ordo 2x2</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">A. Soal Determinan Matriks 3×3</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-1">Soal 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-penyelesaian-metode-sarrus">Langkah Penyelesaian (Metode Sarrus)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jumlahkan-hasil-kali-diagonal-utama">1. Jumlahkan Hasil Kali Diagonal Utama (\)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jumlahkan-hasil-kali-diagonal-sekunder">2. Jumlahkan Hasil Kali Diagonal Sekunder (/)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-determinan">3. Hitung Determinan</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-2">Soal 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Langkah Penyelesaian (Metode Sarrus)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jumlahkan-hasil-kali-diagonal-utama-dari-kiri-atas-ke-kanan-bawah">1. Jumlahkan Hasil Kali Diagonal Utama (dari kiri atas ke kanan bawah)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jumlahkan-hasil-kali-diagonal-sekunder-dari-kiri-bawah-ke-kanan-atas">2. Jumlahkan Hasil Kali Diagonal Sekunder (dari kiri bawah ke kanan atas)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-nilai-determinan-matriks-b">3. Hitung Nilai Determinan Matriks B</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-3">Soal 3</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-penyelesaian">Langkah Penyelesaian</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-nilai-det-c-menggunakan-metode-sarrus">1. Menghitung Nilai <span class="math notranslate nohighlight">\(\det(C)\)</span> menggunakan Metode Sarrus</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-apakah-matriks-termasuk-singular-atau-tidak">2. Penjelasan Apakah Matriks Termasuk Singular atau Tidak</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#b-soal-dekomposisi-matriks-lu-decomposition">B. Soal Dekomposisi Matriks (LU Decomposition)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-4">Soal 4</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-penyelesaian-dekomposisi-lu">Langkah Penyelesaian (Dekomposisi LU)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-mengeliminasi-baris-2-dan-baris-3-pada-kolom-1">Langkah 1: Mengeliminasi Baris 2 dan Baris 3 pada Kolom 1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-mengeliminasi-baris-3-pada-kolom-2">Langkah 2: Mengeliminasi Baris 3 pada Kolom 2</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-menyusun-matriks-l">Langkah 3: Menyusun Matriks <span class="math notranslate nohighlight">\(L\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pembuktian-a-lu">Pembuktian (<span class="math notranslate nohighlight">\(A = LU\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-5">Soal 5</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-penyelesaian-dekomposisi-lu-via-eliminasi-gauss">Langkah Penyelesaian (Dekomposisi LU via Eliminasi Gauss)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-eliminasi-kolom-1-membuat-nol-elemen-di-bawah-b-11">Langkah 1: Eliminasi Kolom 1 (Membuat nol elemen di bawah <span class="math notranslate nohighlight">\(b_{11}\)</span>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-eliminasi-kolom-2-membuat-nol-elemen-di-bawah-posisi-2-2">Langkah 2: Eliminasi Kolom 2 (Membuat nol elemen di bawah posisi <span class="math notranslate nohighlight">\((2,2)\)</span>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Langkah 3: Menyusun Matriks <span class="math notranslate nohighlight">\(L\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pembuktian-b-lu">Pembuktian (<span class="math notranslate nohighlight">\(B = LU\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Kesimpulan</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-6">Soal 6</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Langkah Penyelesaian (Dekomposisi LU)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-eliminasi-kolom-1-membuat-nol-elemen-di-bawah-c-11">Langkah 1: Eliminasi Kolom 1 (Membuat nol elemen di bawah <span class="math notranslate nohighlight">\(c_{11}\)</span>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Langkah 2: Eliminasi Kolom 2 (Membuat nol elemen di bawah posisi <span class="math notranslate nohighlight">\((2,2)\)</span>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Langkah 3: Menyusun Matriks <span class="math notranslate nohighlight">\(L\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pembuktian-c-lu">Pembuktian (<span class="math notranslate nohighlight">\(C = LU\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Kesimpulan</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#c-soal-invers-matriks-33">C. Soal Invers Matriks 3×3</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-7">Soal 7</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-penyelesaian-mencari-invers-dengan-metode-adjoin">Langkah Penyelesaian (Mencari Invers dengan Metode Adjoin)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-menghitung-determinan-matriks-a-det-a">Langkah 1: Menghitung Determinan Matriks <span class="math notranslate nohighlight">\(A\)</span> (<span class="math notranslate nohighlight">\(\det(A)\)</span>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-menghitung-matriks-kofaktor">Langkah 2: Menghitung Matriks Kofaktor</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-menentukan-matriks-adjoin-text-adj-a">Langkah 3: Menentukan Matriks Adjoin (<span class="math notranslate nohighlight">\(\text{Adj}(A)\)</span>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-menghitung-invers-matriks-a-a-1">Langkah 4: Menghitung Invers Matriks <span class="math notranslate nohighlight">\(A\)</span> (<span class="math notranslate nohighlight">\(A^{-1}\)</span>)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pembuktian-a-times-a-1-i">Pembuktian (<span class="math notranslate nohighlight">\(A \times A^{-1} = I\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Kesimpulan</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-8">Soal 8</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Langkah Penyelesaian (Mencari Invers dengan Metode Adjoin)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-menghitung-determinan-matriks-b-det-b">Langkah 1: Menghitung Determinan Matriks <span class="math notranslate nohighlight">\(B\)</span> (<span class="math notranslate nohighlight">\(\det(B)\)</span>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Langkah 2: Menghitung Matriks Kofaktor</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-menentukan-matriks-adjoin-text-adj-b">Langkah 3: Menentukan Matriks Adjoin (<span class="math notranslate nohighlight">\(\text{Adj}(B)\)</span>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-menghitung-invers-matriks-b-b-1">Langkah 4: Menghitung Invers Matriks <span class="math notranslate nohighlight">\(B\)</span> (<span class="math notranslate nohighlight">\(B^{-1}\)</span>)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Kesimpulan</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-9">Soal 9</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Langkah Penyelesaian (Mencari Invers dengan Metode Adjoin)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-menghitung-determinan-matriks-c-det-c">Langkah 1: Menghitung Determinan Matriks <span class="math notranslate nohighlight">\(C\)</span> (<span class="math notranslate nohighlight">\(\det(C)\)</span>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Langkah 2: Menghitung Matriks Kofaktor</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-menentukan-matriks-adjoin-text-adj-c">Langkah 3: Menentukan Matriks Adjoin (<span class="math notranslate nohighlight">\(\text{Adj}(C)\)</span>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-menghitung-invers-matriks-c-c-1">Langkah 4: Menghitung Invers Matriks <span class="math notranslate nohighlight">\(C\)</span> (<span class="math notranslate nohighlight">\(C^{-1}\)</span>)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Kesimpulan</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By KAL
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
